@@ -15,7 +15,7 @@ To run this app, simply open a command terminal inside the repo and type the fol
 - Linux: `python3 Main.py`.
 
 ## Notes
-- Running this app will generate a `/\_\_pycache\_\_/` directory in the local repo. This is automatically ignored by the .gitignore file.
+- Running this app will generate a `/__pycache__/` directory in the local repo. This is automatically ignored by the .gitignore file.
 
 ## Issues
 - ~~A number of functional requirements in-scope demand user interaction in the command line. This is not yet implemented. Coming soon.~~
