@@ -19,5 +19,5 @@ To run this app, simply open a command terminal inside the repo and type the fol
 
 ## Issues
 - ~~A number of functional requirements in-scope demand user interaction in the command line. This is not yet implemented. Coming soon.~~
-- One non-functional requirement in-scope demands that changes to a `Card` object are persisted to the .csv for saving. This is not yet implemented. Coming soon.
+~~- One non-functional requirement in-scope demands that changes to a `Card` object are persisted to the .csv for saving. This is not yet implemented. Coming soon.~~
 - One non-function requirement out-of-scope would demand a third-party database server (likely SQL-based). I may implement this in the future, but it is unlikely.
