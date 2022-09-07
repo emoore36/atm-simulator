@@ -32,23 +32,64 @@ file.close()
 # instantiate teller
 teller: Teller = Teller()
 
-# select card to insert
-test_num = 1
-test_card = card_map[test_num]
+input_str: str = ""
 
-# test_card = Card(-1, "John Doe", "1234567890123456", "2023-04", "084", "visa", 200)
+while input_str.lower() != any(["quit", "q"]):
+    input_str = input("What would you like to do? ")
+    input_str.lower().strip()
 
-# insert card
-teller.receive_card(test_card)
+    if (
+        input_str == "quit"
+        or input_str == "q"
+        or input_str == "exit"
+        or input_str == "e"
+    ):
+        break
 
-# check balance
-teller.check_balance()
+    if input_str == "insert" or input_str == "insert card":
+        card_id: int = int(input("Enter card ID: "))
 
-# deposit $100
-teller.deposit(100)
+        card: Card = card_map.get(card_id)
 
-# withdraw $100
-teller.withdraw(100)
+        if card is None:
+            print("Card not found. Please try again.")
+            continue
 
-# eject card
-teller.eject_card()
+        else:
+            teller.receive_card(card)
+
+            while input_str != "eject":
+
+                input_str = input(
+                    "Would you like to deposit, withdraw, check balance, or eject? "
+                )
+                input_str.lower().strip()
+
+                if input_str == "dep" or input_str == "deposit" or input_str == "d":
+                    dep_amt = float(input("Enter amount to deposit: "))
+                    teller.deposit(dep_amt)
+                    continue
+
+                if (
+                    input_str == input_str == "with"
+                    or input_str == "withdraw"
+                    or input_str == "w"
+                ):
+                    with_amt = float(input("Enter amount to withdraw: "))
+                    teller.withdraw(with_amt)
+                    continue
+
+                if (
+                    input_str == "check"
+                    or input_str == "check balance"
+                    or input_str == "bal"
+                    or input_str == "balance"
+                    or input_str == "check bal"
+                    or input_str == "chkbal"
+                ):
+                    teller.check_balance()
+                    continue
+
+                if input_str == "eject":
+                    teller.eject_card()
+                    break
