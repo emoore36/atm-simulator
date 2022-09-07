@@ -103,6 +103,22 @@ class Card:
         """
         return self._expiration
 
+    def get_cvv(self) -> str:
+        """Returns the Card Verification Value
+
+        Returns:
+            str: The Card Verification Value
+        """
+        return self._cvv
+
+    def get_brand(self) -> str:
+        """Returns the brand of the card
+
+        Returns:
+            str: the brand of the card
+        """
+        return self._brand
+
     def add(self, amt: float) -> None:
         """Adds the given amount to the current balance
 

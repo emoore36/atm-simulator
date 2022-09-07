@@ -7,7 +7,7 @@ card_map: dict[int, Card] = {}
 file = open("mock_credit.csv", "r")
 
 # for each line in file
-for x in file.readlines()[1:5]:
+for x in file.readlines()[1:]:
 
     # create card out of values
     card_info = x.split(",")
@@ -44,6 +44,24 @@ while input_str.lower() != any(["quit", "q"]):
         or input_str == "exit"
         or input_str == "e"
     ):
+
+        # persist changes to csv
+        file = open("mock_credit.csv", "w")
+        file.write("id,name,number,expiration,cvv,brand,balance\n")
+        for x in card_map:
+            card: Card = card_map[x]
+            card_str: str = str.format(
+                "{},{},{},{},{},{},{}\n",
+                str(card.get_id()),
+                card.get_name(),
+                card.get_number(),
+                card.get_expiration(),
+                card.get_cvv(),
+                card.get_brand(),
+                card.get_balance(),
+            )
+            file.write(card_str)
+
         break
 
     if input_str == "insert" or input_str == "insert card":
