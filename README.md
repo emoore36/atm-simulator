@@ -16,16 +16,20 @@ To run this app, simply open a command terminal inside the repo and type the fol
 
 ## Instructions for use
 The first prompt will read, "What would you like to do?". The options for input are
-- 1) inserting a card ("insert", "insert card")
-- 2) quitting the program ("quit", "q", "exit", "e")
+- inserting a card ("insert", "insert card")
+- quitting the program ("quit", "q", "exit", "e")
 
 The "machine" will ask to input the ID of the card to affect. For now, this is any integer between 1 and 1000, as listed in the `mock_credit.csv` file.
 
 Once the card is inserted, the options are as follows:
-- Make a deposit ("dep", "deposit", "d")
-- Make a withdraw ("with", "withdraw", "w")
-- Check the card's account balance ("check", "check balance", "bal", "balance", "check bal", "chkbal")
-- Eject the card ("eject")
+- Make a deposit ("dep", "deposit", "d").
+  - It will ask for the amount (float) to add to the account.
+  - It will reprimand negative values and ignore non-float-compliant values.
+- Make a withdraw ("with", "withdraw", "w").
+  - It will ask for the amount (float) to withdraw from the account
+  - It will reprimand negative values and values greater than the current balance, and ignore non-float-compliant values.
+- Check the card's account balance ("check", "check balance", "bal", "balance", "check bal", "chkbal").
+- Eject the card ("eject").
 
 
 ## Notes
